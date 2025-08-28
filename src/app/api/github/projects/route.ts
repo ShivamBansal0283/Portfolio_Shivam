@@ -2,7 +2,7 @@
 import { NextResponse } from "next/server";
 import { fetchPinnedAndTaggedRepos } from "@/lib/github";
 
-export const revalidate = 60 * 60; // 1 hour cache
+export const revalidate = 3600; // 1 hour cache
 
 export async function GET() {
   try {
