@@ -1,13 +1,13 @@
-// app/api/github/projects/route.ts
+// app/api/github/activity/route.ts
 import { NextResponse } from "next/server";
-import { fetchPinnedAndTaggedRepos } from "@/lib/github";
+import { fetchContributionSeries } from "@/lib/github";
 
-export const revalidate = 60 * 60; // 1 hour cache
+export const revalidate = 60 * 60; // 1 hour
 
 export async function GET() {
   try {
-    const repos = await fetchPinnedAndTaggedRepos("portfolio");
-    return NextResponse.json({ ok: true, repos });
+    const series = await fetchContributionSeries(180);
+    return NextResponse.json({ ok: true, series });
   } catch (e: any) {
     return NextResponse.json({ ok: false, error: e?.message ?? "unknown" }, { status: 500 });
   }

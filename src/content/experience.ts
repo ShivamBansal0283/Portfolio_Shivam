@@ -1,3 +1,4 @@
+// src/content/experience.ts
 export type ExperienceItem = {
   company: string;
   role: string;
@@ -8,7 +9,19 @@ export type ExperienceItem = {
 };
 
 const experience: ExperienceItem[] = [
-  // Fill from resume
-  // { company: "Skill High", role: "Backend Intern", start: "2025-02", end: "2025-06", bullets: ["..."], skills: ["Node.js","PostgreSQL","Auth"] }
+  {
+    company: "Skill High",
+    role: "Data Analyst Intern",
+    start: "2025-02",
+    end: "2025-06",
+    bullets: [
+      "Built backend systems using Node.js, Express, PostgreSQL, Prisma.",
+      "Collaborated on testing & production readiness.",
+      "Implemented secure authentication and scalable APIs."
+    ],
+    skills: ["Node.js", "Express", "PostgreSQL", "Prisma"]
+  },
+  // …add other roles
 ];
+
 export default experience;
