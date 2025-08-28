@@ -1,5 +1,5 @@
 // src/components/Achievements.tsx
-import awards from "@/content/awards";
+import awards from "../content/awards";
 
 export default function Achievements() {
   if (!awards || awards.length === 0) return null;

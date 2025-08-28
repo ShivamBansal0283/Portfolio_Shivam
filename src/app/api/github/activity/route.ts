@@ -1,6 +1,6 @@
 // app/api/github/activity/route.ts
 import { NextResponse } from "next/server";
-import { fetchContributionSeries } from "@/lib/github";
+import { fetchContributionSeries } from "../../../../lib/github";
 
 export const revalidate = 3600; // 1 hour
 

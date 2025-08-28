@@ -3,10 +3,10 @@
 
 
 
-import Hero from "@/components/Hero";
-import ActivityChart from "@/components/ActivityChart";
-import RepoCard from "@/components/RepoCard";
-import { fetchPinnedAndTaggedRepos, fetchContributionSeries } from "@/lib/github";
+import Hero from "../components/Hero";
+ import ActivityChart from "../components/ActivityChart";
+ import RepoCard from "../components/RepoCard";
+ import { fetchPinnedAndTaggedRepos, fetchContributionSeries } from "../lib/github";
 
 export const revalidate = 3600;
 

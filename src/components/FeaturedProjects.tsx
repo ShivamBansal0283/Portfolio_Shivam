@@ -1,6 +1,6 @@
 // server component
 "use client";
-import RepoCard from "@/components/RepoCard";
+import RepoCard from "../components/RepoCard";
 
 type Repo = {
   id: string;

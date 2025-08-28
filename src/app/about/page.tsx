@@ -1,10 +1,9 @@
 // src/app/about/page.tsx
-import profile from "@/content/profile";
-import education from "@/content/education";
-import experience from "@/content/experience";
-import Timeline from "@/components/Timeline";
-import SkillBadges from "@/components/SkillBadges";
-import Achievements from "@/components/Achievements";
+import experience from "../../content/experience";
+import education from "../../content/education";
+import Timeline from "../../components/Timeline";
+import SkillBadges from "../../components/SkillBadges";
+import Achievements from "../../components/Achievements";
 
 export default function AboutPage() {
   return (

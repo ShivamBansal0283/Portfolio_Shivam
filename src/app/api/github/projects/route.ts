@@ -1,6 +1,6 @@
 // app/api/github/projects/route.ts
 import { NextResponse } from "next/server";
-import { fetchPinnedAndTaggedRepos } from "@/lib/github";
+import { fetchPinnedAndTaggedRepos } from "../../../../lib/github";
 
 export const revalidate = 3600; // 1 hour cache
 
