@@ -5,7 +5,14 @@ import { motion } from "framer-motion";
 import profile from "../content/profile";
 import { Github, Linkedin, Mail, Twitter, Instagram } from "lucide-react";
 
+
+import { unstable_noStore as noStore } from "next/cache";
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+export const fetchCache = "force-no-store";
+
 export default function Hero() {
+  noStore();
   return (
     <section className="relative overflow-hidden rounded-3xl border p-8 md:p-12">
 {/* <section className="relative overflow-hidden rounded-3xl border p-6 sm:p-8 md:p-12"> */}
