@@ -2,7 +2,7 @@
 import { NextResponse } from "next/server";
 import { fetchContributionSeries } from "@/lib/github";
 
-export const revalidate = 60 * 60; // 1 hour
+export const revalidate = 3600; // 1 hour
 
 export async function GET() {
   try {
