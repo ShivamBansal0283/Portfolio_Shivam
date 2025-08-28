@@ -1,5 +1,5 @@
-import { fetchPinnedAndTaggedRepos } from "@/lib/github";
-import ProjectsClient from "@/components/ProjectsClient";
+import { fetchPinnedAndTaggedRepos } from "../../lib/github";
+import ProjectsClient from "../../components/ProjectsClient";
 
 export const revalidate = 1800; // 30 min
 

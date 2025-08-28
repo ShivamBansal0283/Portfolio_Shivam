@@ -1,4 +1,4 @@
-import {RESUME_FILE } from "@/lib/site";
+import {RESUME_FILE } from "../lib/site";
 import { FileText} from "lucide-react";
 
 export default function ResumeButtons() {

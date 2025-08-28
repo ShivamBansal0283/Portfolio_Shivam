@@ -88,13 +88,13 @@
 
 "use client";
 import Link from "next/link";
-import ThemeToggle from "@/components/ThemeToggle";
+import ThemeToggle from "../components/ThemeToggle";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
-import ResumeButtons from "@/components/ResumeButtons";
-import MobileNav from "@/components/MobileNav";
-import { RESUME_FILE } from "@/lib/site";
+import ResumeButtons from "../components/ResumeButtons";
+import MobileNav from "../components/MobileNav";
+import { RESUME_FILE } from "../lib/site";
 
 const links = [
   { href: "/", label: "Home" },

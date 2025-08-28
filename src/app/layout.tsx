@@ -35,10 +35,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { ReactNode } from "react";
-import Providers from "@/components/Providers";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import PageTransition from "@/components/PageTransition";
+import Providers from "../components/Providers";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import PageTransition from "../components/PageTransition";
 
 export const metadata: Metadata = {
   title: "Shivam Bansal — Portfolio",

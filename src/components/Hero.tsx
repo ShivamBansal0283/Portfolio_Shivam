@@ -1,8 +1,8 @@
 
 "use client";
-import ResumeButtons from "@/components/ResumeButtons";
+import ResumeButtons from "../components/ResumeButtons";
 import { motion } from "framer-motion";
-import profile from "@/content/profile";
+import profile from "../content/profile";
 import { Github, Linkedin, Mail, Twitter, Instagram } from "lucide-react";
 
 export default function Hero() {

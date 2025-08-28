@@ -22,8 +22,8 @@
 
 
 
-import ResumeButtons from "@/components/ResumeButtons";
-import profile from "@/content/profile";
+import ResumeButtons from "../../components/ResumeButtons";
+import profile from "../../content/profile";
 import { Mail, Github, Linkedin, Twitter, Instagram, MapPin, FileText } from "lucide-react";
 
 export const metadata = { title: "Contact — Shivam Bansal" };

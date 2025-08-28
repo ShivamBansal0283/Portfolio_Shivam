@@ -1,9 +1,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import ProjectFilters from "@/components/ProjectFilters";
-import RepoCard from "@/components/RepoCard";
-import type { Repo } from "@/lib/github";
+import ProjectFilters from "../components/ProjectFilters";
+import RepoCard from "../components/RepoCard";
+import type { Repo } from "../lib/github";
 
 export default function ProjectsClient({ repos }: { repos: Repo[] }) {
   const [filtered, setFiltered] = useState<Repo[]>(repos);

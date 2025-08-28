@@ -1,4 +1,4 @@
-import { RESUME_FILE} from "@/lib/site";
+import { RESUME_FILE} from "../../lib/site";
 import { FileText} from "lucide-react";
 
 export const metadata = { title: "Resume — Shivam Bansal" };

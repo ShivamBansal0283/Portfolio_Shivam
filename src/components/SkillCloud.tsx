@@ -1,4 +1,4 @@
-import skills from "@/content/skills";
+import skills from "../content/skills";
 
 export default function SkillCloud() {
   const groups = Object.entries(skills as Record<string, string[]>);

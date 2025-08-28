@@ -1,5 +1,5 @@
 // src/components/SkillBadges.tsx
-import skills from "@/content/skills";
+import skills from "../content/skills";
 export default function SkillBadges() {
   const groups = Object.entries(skills as Record<string, string[]>);
   return (
