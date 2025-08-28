@@ -1,103 +1,74 @@
-import Image from "next/image";
+// // app/page.tsx
+// import RepoCard from "@/components/ui/RepoCard";
+// import ActivityChart from "@/components/ui/ActivityChart";
 
-export default function Home() {
+// async function getData() {
+//   const [reposRes, actRes] = await Promise.all([
+//     fetch("/api/github/projects", { next: { revalidate: 3600 } }),
+//     fetch("/api/github/activity", { next: { revalidate: 3600 } }),
+//   ]);
+//   const { repos } = await reposRes.json();
+//   const { series } = await actRes.json();
+//   return { repos, series };
+// }
+
+// export default async function Page() {
+//   const { repos, series } = await getData();
+//   return (
+//     <div className="space-y-10">
+//       <header className="space-y-2">
+//         <h1 className="text-3xl font-bold">Hi, I'm GPTOT</h1>
+//         <p className="text-muted-foreground">Data analyst & developer • I build with Next.js, Python, SQL.</p>
+//       </header>
+
+//       <section className="space-y-4">
+//         <h2 className="text-xl font-semibold">Recent Activity</h2>
+//         <ActivityChart data={series} />
+//       </section>
+
+//       <section className="space-y-4">
+//         <h2 className="text-xl font-semibold">Projects</h2>
+//         <div className="grid sm:grid-cols-2 gap-4">
+//           {repos?.slice(0, 8).map((r: any) => (<RepoCard key={r.id} repo={r} />))}
+//         </div>
+//       </section>
+//     </div>
+//   );
+// }
+
+// app/page.tsx
+import RepoCard from "@/components/RepoCard";          // <- no /ui
+import ActivityChart from "@/components/ActivityChart"; // <- no /ui
+import { fetchPinnedAndTaggedRepos, fetchContributionSeries } from "@/lib/github";
+
+export const revalidate = 3600; // ISR: refresh hourly
+
+export default async function Page() {
+  const [repos, series] = await Promise.all([
+    fetchPinnedAndTaggedRepos("portfolio"), // or any topic tag you want to filter by
+    fetchContributionSeries(180),
+  ]);
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="space-y-10">
+      <header className="space-y-2">
+        <h1 className="text-3xl font-bold">Hi, I'm Shivam</h1>
+        <p className="text-muted-foreground">
+          Final-year IT student • Data analyst & developer • Next.js, Python, SQL
+        </p>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <section className="space-y-4">
+        <h2 className="text-xl font-semibold">Recent Activity</h2>
+        <ActivityChart data={series} />
+      </section>
+
+      <section className="space-y-4">
+        <h2 className="text-xl font-semibold">Projects</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {repos?.slice(0, 8).map((r: any) => <RepoCard key={r.id} repo={r} />)}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
     </div>
   );
 }
