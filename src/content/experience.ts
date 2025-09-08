@@ -21,6 +21,18 @@ const experience: ExperienceItem[] = [
     ],
     skills: ["Node.js", "Express", "PostgreSQL", "Prisma"]
   },
+  {
+    company: "JPMorgan Chase & Co.",
+    role: "Virtual Software Engineering Program(Forage)",
+    start: "2025-06",
+    end: "2025-08",
+    bullets:[
+      "Completed the Forage Midas Core Virtual Internship simulating enterprise-grade financial transaction systems.",
+      "Integrated an external REST Incentives API and applied incentive-based rewards to transactions.",
+      "Exposed a REST Balance API on a custom port for real-time user balance queries."
+    ],
+    skills: ["Java","API Designing","Message Queuing"]
+  },
   // …add other roles
 ];
 
