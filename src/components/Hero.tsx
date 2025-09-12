@@ -14,9 +14,16 @@ export const fetchCache = "force-no-store";
 export default function Hero() {
   noStore();
   return (
-    <section className="relative overflow-hidden rounded-3xl border p-8 md:p-12">
+    <section className="relative overflow-hidden rounded-3xl border bg-card p-8 md:p-12">
 {/* <section className="relative overflow-hidden rounded-3xl border p-6 sm:p-8 md:p-12"> */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-cyan-500/10 to-transparent" />
+{/*       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-cyan-500/10 to-transparent" /> */}
+  <div
+    className="pointer-events-none absolute -top-16 -left-16 h-72 w-72 opacity-40 dark:opacity-30"
+    style={{
+      background: "radial-gradient(120px 120px at center, rgba(0,0,0,0.08), transparent 60%)",
+      filter: "blur(10px)"
+    }}
+  />
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
